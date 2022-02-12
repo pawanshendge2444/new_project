@@ -1,0 +1,18 @@
+<!--likes-->
+<div class="card container shadow p-3 mb-0 bg-white rounded">    
+     <div class="card-body"> <br>
+               <% if current_user.role == "buyer" %>
+
+          <strong>Plz Like This Product :</strong>
+       <%= @product.likes.count %> 
+       
+            <% like = current_user.likes.find_by(product: @product) %>
+            <% if like.nil? %>
+               <%= button_to "like", likes_path, params: {like: {product_id: @product.id }}, method: :post %>
+            <% else %>
+               <%= button_to "UnLike", like_path(like), method: :delete %>
+       <% end %>
+       <% end %>
+     </div>
+</div>
+

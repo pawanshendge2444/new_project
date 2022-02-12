@@ -1,0 +1,16 @@
+ 
+<div class="card container shadow p-3 mb-0 bg-white rounded">    
+   <div class="card-body"> 
+       <h3>Comments</h3>
+      <% @product.comments.each do |comment| %>
+         <p>
+             <strong>Plz Comment:</strong>
+             <%= comment.body %>     
+             <%= link_to "Delete Comment", product_comment_path(@product, comment), data: {
+                         turbo_method: :delete,
+                         turbo_confirm: "Are you sure?"
+                       } %>
+         </p> 
+      <% end %>
+   </div>
+</div>

@@ -1,0 +1,12 @@
+
+<h1>Sign Up</h1>
+<%= form_for @user do |f|%>
+  <%= f.label :username%><br>
+  <%= f.text_field :username%><br><br>
+  <%= f.label :Role%>
+  <%= f.select:role, ["seller","buyer"] %><br><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br><br>
+  <%= f.submit %>
+<%end%>
+<%=flash[:error]%>

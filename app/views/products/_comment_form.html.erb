@@ -1,0 +1,17 @@
+ <!--Comments-->
+<div class="card container shadow p-3 mb-5 bg-white rounded">    
+    <div class="card-body"> 
+        
+       <h3>Comment Plz:</h3>
+            <%= form_with model: [ @product, @product.comments.build ] do |form| %>
+             
+               <p>
+                   <%= form.label :body %><br>
+                   <%= form.text_area :body %>
+               </p>
+               <p>
+                   <%= form.submit %>
+               </p>
+            <% end %>
+    </div>
+</div>
